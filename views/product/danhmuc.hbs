@@ -1,0 +1,33 @@
+<div class="container pt-4">
+  <h1>Danh mục sản phẩm</h1>
+
+  <form action="" method="post">
+    <input class="form-control" type="text" name="name">
+    <br>
+    <button class="btn btn-primary">Thêm</button>
+  </form>
+
+  <table class="table table-hover mt-5">
+    <tr>
+      <th>Name</th>
+    </tr>
+    {{!-- danhmuc = [
+    {
+      id : 'sdsfsaf', name : "ao"
+    },
+    {
+      id: 'afsdfsaf', name : "quan"
+    }
+    ] --}}
+    {{#each danhmuc}}
+      <tr>
+        <td>
+          {{#each this}}
+            {{name}}
+          {{/each}}
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
+

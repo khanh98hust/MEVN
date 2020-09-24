@@ -1,0 +1,69 @@
+<div class="container pt-4">
+  <form method="post">
+    <h3>Chọn danh mục</h3>
+      <div class="form-group">
+        <label for=""></label>
+        <select class="form-control" name="danhmuc" >
+          {{#each danhmuc}}
+            <option>
+              {{#each this}}
+                {{name}}
+              {{/each}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <button class="btn btn-danger">choose</button>
+  </form>
+  <table class="table table-hover mt-5">
+      <tr>
+          <th>Avatar</th>
+          <th>Tên</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th></th>
+          <th></th>
+      </tr>
+      {{#each sanpham}}
+      <tr>
+          <td>
+            <img src="{{img}}" alt="">
+          </td>
+          <td>
+              {{name}}
+          </td>
+          <td>
+              {{price}}
+          </td>
+          <td>
+              {{soluong}}
+          </td>
+          <td>
+            <a href="./sua/{{_id}}" class="btn btn-primary">Sửa</a>
+          </td>
+          <td>
+            <a href="./xoa/{{_id}}" class="btn btn-danger">Xoá</a>
+          </td>
+      </tr>
+      {{/each}}
+  </table>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {{!-- <li class="page-item"><a class="page-link" href="?page={{pre}}">Previous</a></li> --}}
+      <li class="page-item {{style}}">
+        <a class="page-link" href="?page={{pre}}">Previous</a>
+      </li>
+      {{#each arr}}
+        <li class="page-item">
+          <a class="page-link" href="?page={{this}}">{{this}}</a>
+        </li>
+      {{/each}}
+      {{#if next}}
+      <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</div>
+
+

@@ -1,0 +1,60 @@
+<div class="container pt-4">
+    <h1>Sản phẩm</h1>
+    <form action="" method="post">
+        <p>Tên</p>
+        <input class="form-control" type="text" name="name" >
+        <p>Giá</p>
+        <input class="form-control" type="text" name="price" >
+        <p>Số lượng</p>
+        <input class="form-control" type="text" name="soluong" >
+        <br>
+        <p>Danh mục :</p>
+        <div class="form-group">
+          <label for=""></label>
+          <select class="form-control" name="danhmuc" >
+            {{#each danhmuc}}
+              <option>
+                {{#each this}}
+                  {{name}}
+                {{/each}}
+              </option>
+            {{/each}}
+          </select>
+        </div>
+        <br>
+        <button class="btn btn-primary mt-5">Thêm</button>
+    </form>
+    <table class="table table-hover mt-5">
+        <tr>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {{#each sanpham}}
+        <tr>
+            <td>
+                {{name}}
+            </td>
+            <td>
+                {{price}}
+            </td>
+            <td>
+                {{soluong}}
+            </td>
+            <td>
+              <a href="./sua/{{_id}}" class="btn btn-primary">Sửa</a>
+            </td>
+            <td>
+              <a href="./xoa/{{_id}}" class="btn btn-danger">Xoá</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
+
+
+
+
+

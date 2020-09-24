@@ -1,0 +1,26 @@
+<div class="container pt-5">
+  <form action="" method="post">
+        <p>Tên</p>
+        <input class="form-control" type="text" name="name" value="{{#each value}}{{name}}{{/each}}">
+        <p>Giá</p>
+        <input class="form-control" type="text" name="price" value="{{#each value}}{{price}}{{/each}}">
+        <p>Số lượng</p>
+        <input class="form-control" type="text" name="soluong" value="{{#each value}}{{soluong}}{{/each}}">
+        <br>
+        <p>Danh mục :</p>
+        <div class="form-group">
+          <label for=""></label>
+          <select class="form-control" name="danhmuc" >
+            {{#each danhmuc}}
+              <option>
+                {{#each this}}
+                  {{name}}
+                {{/each}}
+              </option>
+            {{/each}}
+          </select>
+        </div>
+        <br>
+        <button class="btn btn-primary mt-5">Update</button>
+    </form>
+</div>
