@@ -24,7 +24,7 @@
       <label for="ten">Tên</label>
       <input type="text" name="" id="ten" class="form-control" placeholder="" aria-describedby="helpId">
       
-      <label for="sodienthoai">Sodienthoai</label>
+      <label for="sodienthoai">Số điện thoại</label>
       <input type="text" name="" id="sodienthoai" class="form-control" placeholder="" aria-describedby="helpId">
       
       <label for="diachi">Địa chỉ</label>
