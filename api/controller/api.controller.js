@@ -58,7 +58,7 @@ module.exports.updateCart = async (req, res)=>{
 };
 
 module.exports.getUser = async (req, res)=>{
-  let a = await userDb.findOne({_id : req.params.id})
-  res.json(a)
+  let user = await userDb.findOne({_id : req.params.id})
+  res.json(user)
 };
 
