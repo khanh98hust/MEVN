@@ -1,6 +1,9 @@
 <template>
   <div class="container">
-    <h1>Cart<button class="btn btn-outline-info ml-5" @click="update">update</button></h1>
+    <div class="d-flex">
+      <h1>Cart<button class="btn btn-outline-info ml-5" @click="update">update </button></h1>
+      <h2 v-if="notification" class="ml-5">Done!</h2>
+    </div>
     <table class="table">
       <thead>
         <tr>
@@ -40,6 +43,7 @@
   export default {
     data() {
       return {
+        notification : false
       }
     },
     computed: {
@@ -51,6 +55,10 @@
     },
     methods: {
       update(){
+        this.notification = true;
+        setTimeout(() =>{
+          this.notification = false
+        }, 2000)
         server.put(`/user/${this.$store.state.user._id}`, this.$store.state.cart).then(res => console.log(res)).catch(err => console.log('err'))
       }
     },
