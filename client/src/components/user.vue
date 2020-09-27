@@ -33,7 +33,7 @@
     },
     methods: {
       async getdata(){
-        let a = (await axios.get('http://localhost:3333/api/product')).data
+        let a = (await axios.get('http://localhost:9367/api/product')).data
         this.list = a
       },
       search(){
