@@ -16,4 +16,6 @@ router.put('/user/:id', controller.updateCart)
 
 router.post('/login', controller.login)
 
+router.post('/friend', controller.addfriend)
+
 module.exports = router;

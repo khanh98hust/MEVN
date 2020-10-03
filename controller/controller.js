@@ -1,4 +1,3 @@
-var mongoose = require('mongoose');
 var danhmucDb = require('../models/danhmuc.model')
 var sanphamDb = require('../models/sanpham.model');
 const {
@@ -38,6 +37,7 @@ module.exports.search = async (req, res) => {
   res.render('product/xemsanpham', {
     sanpham: list
   })
+  console.log(a);
 }
 
 module.exports.suasp = async (req, res) => {
@@ -64,7 +64,6 @@ module.exports.xoasp = (req, res) => {
 module.exports.xemsanpham = async (req, res) => {
   var sanpham = await sanphamDb.find(); //lấy tất cả dữ liệu trong database gán vào data
   var danhmuc = await danhmucDb.find();
-
   var page = parseInt(req.query.page) || 1; //trang 1 -> page = 2
   var sosanpham1trang = 10;
   var batdau = (page - 1) * sosanpham1trang; // batdau = 10

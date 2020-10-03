@@ -26,7 +26,6 @@ app.use('/user', userRouter);
 app.use('/product', middleware.checklogin, sanphamRouter);
 app.use('/api', apiRouter);
 
-// anh khanh khong xao loz = anhKhanhKhongXaoLoz
 
 app.set('view engine', 'hbs');
 app.engine('.hbs',exphbs({defaultLayout :'layout',extname: '.hbs'}));

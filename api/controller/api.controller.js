@@ -1,5 +1,6 @@
 var sanphamDb = require('../../models/sanpham.model')
 var userDb = require('../../models/user.model')
+const friendDb = require('../../models/friends')
 
 const jwt = require('jsonwebtoken') // json web token
 const { signedCookies } = require('cookie-parser')
@@ -62,3 +63,8 @@ module.exports.getUser = async (req, res)=>{
   res.json(user)
 };
 
+// test
+module.exports.addfriend = async (req, res) =>{
+  let a = await friendDb.findOneAndUpdate({name : 'cec'}, { $push:{friends : {ten : 'buoiii', age : 2333}}})
+  return res.json(a)
+}
